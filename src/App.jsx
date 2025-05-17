@@ -79,7 +79,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="quiz-box">
       {!started && <button onClick={handleStart}>Start</button>}
 
       {started && currQuestionIndex <= quizSize && currQuestion && (
@@ -92,13 +92,13 @@ function App() {
       )}
 
       {started && currQuestionIndex >= quizSize + 1 && (
-        <div>
-          <p>Quiz Completed!</p>{" "}
+        <>
+          <p>Quiz Completed!</p>
           <p>
             Score: {score} / {quizSize}
           </p>
           <button onClick={handleReset}>Reset</button>
-        </div>
+        </>
       )}
     </div>
   );
